@@ -1,0 +1,7 @@
+SQL-2 
+
+"A hacked site members' details have surfaced on a darknet forum. Please submit all members' details.
+Use SQL to retrieve the data and submit the resulting table."
+
+SELECT *
+FROM members; 
