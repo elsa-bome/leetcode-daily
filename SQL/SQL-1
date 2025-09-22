@@ -1,0 +1,7 @@
+SQL-1 
+
+'A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all records' details.
+Use SQL to retrieve the data and submit the resulting table."
+
+SELECT *
+FROM mailing_list; 
