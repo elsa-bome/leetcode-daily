@@ -1,6 +1,7 @@
 SQL-3 
 
-"A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all records family names and emails' details."
+"A mailing list of an illegal online service was sent to the SQLPD hot-line. 
+Please submit all records family names and emails' details."
 
 SELECT FamilyName, Email
 FROM mailing_list; 

@@ -1,0 +1,8 @@
+SQL-6
+
+"A mailing list of an illegal online service was sent to the SQLPD hot-line. 
+Please submit all entries' details sorted by emails in ascending order."
+
+SELECT *
+FROM mailing_list 
+ORDER BY Email ASC; 

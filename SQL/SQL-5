@@ -1,6 +1,7 @@
 SQL-5
 
-"A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all entries given names' details. Please make sure there are no duplicates."
+"A mailing list of an illegal online service was sent to the SQLPD hot-line. 
+Please submit all entries given names' details. Please make sure there are no duplicates."
 
 SELECT DISTINCT GivenName
 FROM mailing_list;

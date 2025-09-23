@@ -1,0 +1,8 @@
+SQL-8
+
+"A mailing list of an illegal online service was sent to the SQLPD hot-line. 
+Please submit all entries join dates and last names' details sorted by join dates in descending order. Please make sure there are no duplicates."
+
+SELECT DISTINCT LastName, JoinDate
+FROM mailing_list 
+ORDER BY JoinDate DESC;

@@ -1,0 +1,8 @@
+SQL-9
+
+"An illegal site's servers were seized in a recent operation. 
+Please submit all users number of downloads, family names and email addresses' details sorted by family names in ascending order and then by number of downloads in ascending order."
+
+SELECT Downloads, FamilyName, EmailAddress
+FROM users
+ORDER BY FamilyName, Downloads ASC;

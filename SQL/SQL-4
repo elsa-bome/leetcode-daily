@@ -1,6 +1,7 @@
 SQL-4
 
-"An illegal site's servers were seized in a recent operation. Please submit all users access times and email addresses' details."
+"An illegal site's servers were seized in a recent operation. 
+Please submit all users access times and email addresses' details."
 
 SELECT EmailAddress, AccessTime
 FROM users; 
