@@ -1,0 +1,10 @@
+SQL-12
+
+"A hacked site subscribers' details have surfaced on a darknet forum. 
+Please submit the top 5 subscribers password hashes, subscribed since dates and mailing addresses' details when sorted by mailing addresses in ascending order and then by subscribed since dates in ascending order. 
+Please make sure there are no duplicates." 
+
+SELECT DISTINCT PasswordHash, SubscribedSince, MailingAddress
+FROM subscribers
+ORDER BY MailingAddress ASC, SubscribedSince ASC
+LIMIT 5;

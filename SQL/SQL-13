@@ -1,0 +1,10 @@
+SQL-13
+
+"What is the oldest song in the playlist? 
+What about the newest song?"
+
+SELECT title, artist, MIN(year)
+FROM playlist;
+
+SELECT title, artist, MAX(year)
+FROM playlist;

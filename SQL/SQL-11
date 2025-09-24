@@ -1,0 +1,8 @@
+SQL-11
+
+"A hacked site subscribers' details have surfaced on a darknet forum. 
+Please submit all subscribers names, number of purchases and subscription dates' details sorted by number of purchases in ascending order and then by subscription dates in descending order." 
+
+SELECT Name, Purchases, SubscriptionDate
+FROM subscribers
+ORDER BY Purchases ASC, SubscriptionDate DESC; 
