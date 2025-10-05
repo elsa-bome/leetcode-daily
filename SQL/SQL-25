@@ -14,6 +14,7 @@ action_date refers to the date when users activated their accounts
 and confirmed their sign-up through text messages."
 
 "here we cast the date to DATE type to ignore the time part --> integer"
+
 WITH dated_events AS (
     SELECT 
         em.*,
