@@ -1,0 +1,47 @@
+SQL-25
+
+"Assume you're given tables with information about TikTok 
+user sign-ups and confirmations through email and text. 
+New users on TikTok sign up using their email addresses, 
+and upon sign-up, each user receives a text message confirmation 
+to activate their account.
+
+Write a query to display the user IDs of those who did not confirm their 
+sign-up on the first day, but confirmed on the second day.
+
+Definition:
+action_date refers to the date when users activated their accounts 
+and confirmed their sign-up through text messages."
+
+"here we cast the date to DATE type to ignore the time part --> integer"
+WITH dated_events AS (
+    SELECT 
+        em.*,
+        tx.*,
+        CAST(tx.action_date AS DATE) AS action_date_only,
+        CAST(em.signup_date AS DATE) AS signup_date_only
+    FROM emails AS em
+    INNER JOIN texts AS tx
+        ON em.email_id = tx.email_id
+)
+
+SELECT user_id
+FROM dated_events
+WHERE (action_date_only - signup_date_only) = 1;
+
+"or, here date is a timestamp, therefore INTERVAL can be used"
+
+SELECT user_id
+FROM emails AS em
+INNER JOIN texts AS tx
+    ON em.email_id = tx.email_id
+WHERE (tx.action_date - em.signup_date) = INTERVAL '1 day';
+
+"or, here date is an integer, INTERVAL cannot be used"
+
+SELECT user_id
+FROM emails AS em
+INNER JOIN texts AS tx
+    ON em.email_id = tx.email_id
+WHERE (tx.action_date::DATE - em.signup_date::DATE) = 1;
+

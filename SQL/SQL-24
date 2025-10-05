@@ -1,0 +1,27 @@
+SQL-24
+
+"Assume you have an events table on Facebook app analytics. 
+Write a query to calculate the click-through rate (CTR) 
+for the app in 2022 and round the results to 2 decimal places.
+
+Definition and note:
+Percentage of click-through rate (CTR) = 100.0 * Number of clicks / Number of impressions
+To avoid integer division, multiply the CTR by 100.0, not 100."
+
+WITH counter_fun AS (
+    SELECT 
+        app_id,
+        COUNT(CASE WHEN event_type = 'click' THEN 1 END) AS click_count,
+        COUNT(CASE WHEN event_type = 'impression' THEN 1 END) AS impression_count
+    FROM events
+    WHERE DATE_PART('year', timestamp::DATE) = 2022
+    GROUP BY app_id
+)
+
+SELECT 
+    app_id,
+    ROUND(
+        (CASE WHEN impression_count = 0 THEN 0 ELSE 100.0 * click_count / impression_count END)
+    , 2) AS ctr_percentage
+FROM counter_fun;
+
